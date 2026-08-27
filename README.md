@@ -2,7 +2,7 @@
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0F1417,50:1C2329,100:E0A83E&height=220&section=header&text=ITACHI-XMD&fontSize=60&fontColor=ffffff&fontAlignY=38&desc=WhatsApp%20Bot%20System%20%C2%B7%20v2.0&descAlignY=58&descSize=18&animation=fadeIn" width="100%"/>
 
-<img src="https://i.ibb.co/nN363jyb/IMG-20260412-WA1100.jpg" width="160" style="border-radius:50%;border:3px solid #E0A83E"/>
+<img src="https://i.ibb.co/nN363jyb/IMG-20260412-WA1100.jpg" width="1000" style="border-radius:50%;border:3px solid #E0A83E"/>
 
 <br/><br/>
 
@@ -59,27 +59,6 @@
 Modération de groupe, jeux, IA conversationnelle, téléchargement de médias, génération d'images — plus de **150 commandes**, un **dashboard web pour tout contrôler sans WhatsApp**, et une **mise à jour en un clic** directement depuis le bot.
 
 <br clear="right"/>
-
----
-
-## 🛡️ Dashboard Admin
-
-<div align="center">
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=16&duration=2000&pause=800&color=3FD6C4&center=true&vCenter=true&width=500&lines=%2Fadmin+%E2%80%94+prot%C3%A9g%C3%A9+par+mot+de+passe" alt="dashboard"/>
-</div>
-
-Accessible sur `https://ton-url.com/admin`, protégé par un mot de passe (`ADMIN_PASSWORD` dans le `.env`) :
-
-| Contrôle | Ce que ça fait |
-|---|---|
-| 📊 **Vue d'ensemble** | Uptime, mémoire utilisée, version Node/bot |
-| 📱 **Sessions** | Liste des numéros connectés + statut en direct |
-| 🌍 **Mode public/privé** | Bascule en un clic (relié à `.mode`) |
-| 🚧 **Maintenance** | Bloque tout le monde sauf owner/sudo (relié à `.maintenance`) |
-| 🔄 **Mise à jour** | Colle un lien zip → suivi en direct du téléchargement/extraction/redémarrage |
-| 🔁 **Redémarrage** | Relance le bot proprement, en un clic |
-
-> 💡 Aucune donnée sensible (session WhatsApp, réglages des groupes) n'est jamais écrasée par une mise à jour — `sessions/`, `data/` et `.env` sont toujours protégés.
 
 ---
 
@@ -181,23 +160,6 @@ npm start
 
 ---
 
-## ⚙️ Configuration
-
-Copie `.env.example` en `.env` et remplis :
-
-| Variable | Description | Obligatoire |
-|---|---|:---:|
-| `OWNER_NUMBER` | Ton numéro WhatsApp (sans `+`) | ✅ |
-| `OWNER_NAME` | Ton nom, affiché dans le menu | ✅ |
-| `ADMIN_PASSWORD` | Mot de passe du dashboard `/admin` | ✅ |
-| `GROQ_API_KEY` | Clé IA (gratuite sur [console.groq.com](https://console.groq.com)) pour `.ai`/`.gpt`/`.gemini`/`.codeai`/`.chatbot` | ✅ |
-| `APP_URL` | URL publique du bot (auto-ping anti-veille) | Recommandé |
-| `PREFIX` | Préfixe des commandes (défaut `.`) | — |
-| `COMMAND_MODE` | `public` ou `private` | — |
-| `PACK_NAME` / `PACK_AUTHOR` | Nom/auteur des packs de stickers | — |
-
----
-
 ## 📱 Connexion WhatsApp
 
 ```
@@ -231,7 +193,7 @@ Dans les deux cas : téléchargement → extraction → remplacement des fichier
 
 <div align="center">
 
-<img src="https://i.ibb.co/sp7vYJt5/1772381137526.png" width="140" style="border-radius:50%"/>
+<img src="https://i.ibb.co/sp7vYJt5/1772381137526.png" width="700" style="border-radius:50%"/>
 
 ### Ibrahima Sory Sacko 🇬🇳
 *Fondateur de CENTRAL-HEX*
