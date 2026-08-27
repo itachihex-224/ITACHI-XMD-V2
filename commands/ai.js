@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-const GROQ_API_KEY = process.env.GROQ_API_KEY || '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';
+const GROQ_API_KEY = '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';
 
 const channelInfo = {
     forwardingScore: 1, isForwarded: true,
@@ -80,4 +80,3 @@ async function aiCommand(sock, chatId, message) {
 }
 
 module.exports = aiCommand;
-
