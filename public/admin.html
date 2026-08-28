@@ -369,7 +369,7 @@ $('restartBtn').addEventListener('click', async () => {
 $('updateBtn').addEventListener('click', async () => {
   const url = $('zipUrl').value.trim();
   const log = $('updateLog');
-  if (!url) { log.className = 'progress-log error'; log.textContent = 'Colle un lien de zip d\\'abord.'; return; }
+  if (!url) { log.className = 'progress-log error'; log.textContent = "Colle un lien de zip d'abord."; return; }
   log.className = 'progress-log';
   log.textContent = 'Démarrage...';
   $('updateBtn').disabled = true;
@@ -418,4 +418,3 @@ $('updateBtn').addEventListener('click', async () => {
 </script>
 </body>
 </html>
-
