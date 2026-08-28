@@ -221,7 +221,7 @@ async function handleChatbotResponse(sock, chatId, message, userMessage, senderI
     }
 }
 
-const GROQ_API_KEY = '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';
+const GROQ_API_KEY = process.env.GROQ_API_KEY || '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';
 
 async function getAIResponse(userMessage, userContext) {
     try {
@@ -243,7 +243,7 @@ Informations sur l'utilisateur : ${JSON.stringify(userContext.userInfo)}`;
         const r = await axios.post(
             'https://api.groq.com/openai/v1/chat/completions',
             {
-                model: 'llama-3.3-70b-versatile',
+                model: 'openai/gpt-oss-120b',
                 messages: [
                     { role: 'system', content: systemPrompt },
                     ...historyMessages.slice(0, -1),
@@ -276,3 +276,4 @@ module.exports = {
     handleChatbotCommand,
     handleChatbotResponse
 }; 
+
