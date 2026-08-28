@@ -1,7 +1,7 @@
 // copilot.js — ITACHI-XMD-V2
 const axios = require('axios');
 
-const GROQ_API_KEY = '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';
+const GROQ_API_KEY = process.env.GROQ_API_KEY || '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';
 
 const channelInfo = {
     forwardingScore: 1, isForwarded: true,
@@ -29,7 +29,7 @@ async function copilotCommand(sock, chatId, message, args) {
             const r = await axios.post(
                 'https://api.groq.com/openai/v1/chat/completions',
                 {
-                    model: 'llama-3.3-70b-versatile',
+                    model: 'openai/gpt-oss-120b',
                     messages: [{ role: 'user', content: prompt }],
                     temperature: 0.5,
                     max_tokens: 1200
