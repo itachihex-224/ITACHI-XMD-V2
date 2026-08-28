@@ -1901,4 +1901,3 @@ module.exports = {
         await handleAutoReact(sock, status);
     }
 };
-
