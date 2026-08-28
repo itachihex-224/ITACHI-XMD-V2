@@ -1,0 +1,81 @@
+ITACHI-XMD — FICHIERS CORRIGÉS UNIQUEMENT
+==========================================
+Ce zip ne contient QUE les fichiers modifiés. Remplace-les un par un
+(ou tous d'un coup) aux mêmes chemins dans ton repo GitHub / Railway.
+
+⚠️ NE PAS écraser tout ton projet avec ce zip — il ne contient pas
+node_modules, sessions/, .env, etc. Copie juste ces fichiers par-dessus
+les tiens, aux mêmes emplacements.
+
+FICHIERS INCLUS ET CE QU'ILS CORRIGENT :
+
+main.js
+  - .maintenance n'était jamais appliqué → corrigé
+  - .approve n'était jamais vérifié → corrigé
+  - .antimarabout n'était jamais appelé → corrigé
+  - .take/.steal plantait (argument manquant) → corrigé
+  - .move (tic-tac-toe) plantait (mauvaise fonction) → corrigé
+  - .update maintenant réservé au propriétaire/sudo (faille de sécurité corrigée)
+
+web.js
+  - Nouveau : backend du dashboard admin (/admin) avec login, statut,
+    toggle maintenance, toggle public/privé, mise à jour à distance
+  - Auto-ping toutes les 4 min pour éviter la mise en veille Railway
+
+public/admin.html
+  - Nouveau : interface web du dashboard admin (thème CENTRAL-HEX)
+  - Bug corrigé : une erreur d'échappement JS cassait tout le script
+    (c'est pour ça que la connexion avec le mot de passe ne marchait pas)
+
+commands/ai.js, chatbot.js, claude.js, codeai.js, copilot.js,
+deepseek.js, lovable.js
+  - Modèle Groq "llama-3.3-70b-versatile" supprimé par Groq le 17/06/2026
+    → remplacé par "openai/gpt-oss-120b" (c'était LA cause du "IA
+    temporairement indisponible", pas la clé API)
+  - Clé API mise à jour + lecture depuis process.env.GROQ_API_KEY
+
+commands/lyrics.js
+  - .lyrics plantait à chaque fois (mauvais format d'argument) → corrigé
+
+commands/imagine.js, commands/sora.js
+  - Domaine de l'API GiftedTech mort → remplacé par le bon domaine
+
+commands/footballnews.js
+  - Ancienne clé API TheSportsDB périmée → remplacée
+  - Réécrit pour afficher TOUS les matchs du jour (pas juste 7 ligues)
+
+commands/update.js
+  - .update ne faisait rien en réalité → réécrit pour télécharger,
+    extraire et appliquer une mise à jour depuis un zip, puis redémarrer
+
+commands/maintenance.js
+  - Ajout d'une fonction setMaintenanceMode() utilisable aussi par
+    le dashboard admin
+
+commands/antimentionstatus.js
+  - Mauvais champ WhatsApp utilisé pour détecter les mentions dans
+    les statuts → corrigé
+
+data/commandDescriptions.json, data/prefix.json, data/antidelete.json
+  - Étaient dans un dossier data/data/ jamais lu par le code
+    (donc .help <commande> affichait des descriptions vides)
+  - Déplacés au bon endroit : data/
+
+package.json
+  - Ajout de la dépendance "adm-zip" (nécessaire pour .update)
+
+.env.example
+  - Ajout de ADMIN_PASSWORD, APP_URL, GROQ_API_KEY
+
+README.md
+  - Entièrement réécrit avec la vraie liste des commandes, le dashboard
+    admin, les instructions de déploiement
+
+POUR LE DASHBOARD /admin SUR RAILWAY :
+  1. Remplace web.js et public/admin.html dans ton repo
+  2. Ajoute la variable d'environnement ADMIN_PASSWORD sur Railway
+     (sinon le login échouera)
+  3. (Optionnel) Ajoute APP_URL=https://itachi-xmd-v2-production-696d.up.railway.app
+     pour que l'auto-ping fonctionne
+  4. Redéploie, puis va sur /admin avec le mot de passe défini
+
